@@ -1,0 +1,15 @@
+[package]
+name = "InvestmentFlow"
+version = "1.0.0"
+authors = []
+
+[addresses]
+InvestmentFlow = "_"
+
+[dev-addresses]
+InvestmentFlow = "0x42"
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "testnet"
+subdir = "aptos-move/framework/aptos-framework" 
