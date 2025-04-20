@@ -178,6 +178,7 @@ export const getOHLCData = async (timeframe = '1d') => {
         formattedData.sort((a, b) => a.time - b.time);
         
         console.log(`成功从 Binance 获取${timeframe}时间周期的数据，数据点数: ${formattedData.length}`);
+        console.log(formattedData);
         return formattedData;
       }
     } catch (binanceError) {

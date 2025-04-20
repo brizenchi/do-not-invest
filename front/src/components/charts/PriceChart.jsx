@@ -66,25 +66,25 @@ const PriceChart = ({ containerHeight = 400 }) => {
         grid: {
           vertLines: { 
             color: isDarkTheme ? 'rgba(45, 45, 45, 0.5)' : 'rgba(224, 224, 224, 0.5)',
-            style: 1, // 虚线
+            style: 1,
           },
           horzLines: { 
             color: isDarkTheme ? 'rgba(45, 45, 45, 0.5)' : 'rgba(224, 224, 224, 0.5)',
-            style: 1, // 虚线
+            style: 1,
           },
         },
         crosshair: {
-          mode: 1, // 十字线模式
+          mode: 1,
           vertLine: {
             color: isDarkTheme ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)',
             width: 1,
-            style: 2, // 虚线
+            style: 2,
             labelBackgroundColor: isDarkTheme ? '#2d2d2d' : '#f5f5f5',
           },
           horzLine: {
             color: isDarkTheme ? 'rgba(255, 255, 255, 0.3)' : 'rgba(0, 0, 0, 0.3)',
             width: 1,
-            style: 2, // 虚线
+            style: 2,
             labelBackgroundColor: isDarkTheme ? '#2d2d2d' : '#f5f5f5',
           },
         },
@@ -92,14 +92,13 @@ const PriceChart = ({ containerHeight = 400 }) => {
           borderColor: isDarkTheme ? 'rgba(45, 45, 45, 0.8)' : 'rgba(224, 224, 224, 0.8)',
           borderVisible: true,
           scaleMargins: {
-            top: 0.1, // 上边距
-            bottom: 0.2, // 下边距，留出空间给交易量
+            top: 0.1,
+            bottom: 0.2,
           },
-          // 使用更精确的价格格式
           priceFormat: {
             type: 'price',
-            precision: 2, // 保留两位小数
-            minMove: 0.01, // 最小变动单位
+            precision: 2,
+            minMove: 0.01,
           },
         },
         timeScale: {
@@ -113,18 +112,16 @@ const PriceChart = ({ containerHeight = 400 }) => {
             const minutes = date.getMinutes().toString().padStart(2, '0');
             return `${hours}:${minutes}`;
           },
-          // 启用左右滑动
-          barSpacing: 12, // 增加柱子间距，使图表更清晰
+          barSpacing: 12,
           minBarSpacing: 5,
           rightOffset: 5,
           leftOffset: 5,
           lockVisibleTimeRangeOnResize: false,
           rightBarStaysOnScroll: false,
-          // 启用动画
           fixLeftEdge: false,
           fixRightEdge: false,
-          // 启用缩放
           allowShiftVisibleRangeOnWhitespaceClick: true,
+          animate: true,
         },
         watermark: {
           visible: true,
@@ -136,7 +133,6 @@ const PriceChart = ({ containerHeight = 400 }) => {
           horzAlign: 'center',
           vertAlign: 'center',
         },
-        // 启用手势操作
         handleScroll: {
           mouseWheel: true,
           pressedMouseMove: true,
@@ -147,14 +143,6 @@ const PriceChart = ({ containerHeight = 400 }) => {
           axisPressedMouseMove: true,
           mouseWheel: true,
           pinch: true,
-        },
-        // 添加动画效果
-        timeScale: {
-          ...chartInstance?.timeScale?.().options() || {},
-          timeVisible: true,
-          secondsVisible: false,
-          borderColor: isDarkTheme ? 'rgba(45, 45, 45, 0.8)' : 'rgba(224, 224, 224, 0.8)',
-          animate: true,
         },
       });
       

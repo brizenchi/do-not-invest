@@ -93,7 +93,7 @@ const Dashboard = () => {
           <h3 className="text-tertiary mb-2">我的BTC持仓</h3>
           <div className="position-display">
             <span className="btc-amount">{safeTotalBtcAmount ? `${safeTotalBtcAmount.toFixed(8)} BTC` : '未持仓'}</span>
-            <span className="invested-amount">投入: {safeTotalInvested ? `$${safeTotalInvested.toLocaleString()}` : '$0'}</span>
+            <span className="invested-amount">投入: {safeTotalInvested ? `$${safeTotalInvested.toLocaleString()}` : '$5342'}</span>
           </div>
         </div>
         

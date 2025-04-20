@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
         <div className="container header-container">
           <div className="logo">
             <Link to="/">
-              <h1>BTC定投</h1>
+              <h1>Do Not Invest</h1>
             </Link>
           </div>
           
