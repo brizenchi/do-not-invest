@@ -1,7 +1,7 @@
 # Do Not Invest - Project Overview
 
 ## Introduction
-"Do Not Invest" is an educational presentation designed to provide critical insights into the risks and pitfalls of investing. Built using [Gamma.app](https://gamma.app/), this project aims to inform and caution potential investors by highlighting key factors to consider before making financial commitments. The content is structured to be engaging, visually appealing, and easy to understand, making it suitable for both novice and experienced investors.
+"Do Not Invest" is an educational presentation designed to provide critical insights into the risks and pitfalls of investing. This project aims to inform and caution potential investors by highlighting key factors to consider before making financial commitments. The content is structured to be engaging, visually appealing, and easy to understand, making it suitable for both novice and experienced investors.
 
 ## Project Purpose
 The primary goal of this project is to:
@@ -47,7 +47,7 @@ Please ensure all contributions align with the educational and non-advisory natu
 This project is licensed under the [MIT License](LICENSE). Feel free to use, share, and modify the content for non-commercial purposes, provided proper attribution is given.
 
 ## Acknowledgments
-- Created using [Gamma.app](https://gamma.app/), an AI-powered platform for generating engaging presentations.
+- Created an AI-powered platform for generating engaging presentations.
 - Inspired by the need to promote financial literacy and protect investors from common pitfalls.
 
 ## Contact
