@@ -1,0 +1,213 @@
+.price-chart-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: relative; /* 添加相对定位，用于加载状态的绝对定位 */
+  transition: all 0.3s ease;
+}
+
+.price-chart-container:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.chart-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bg-secondary);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.timeframe-selector {
+  display: flex;
+  gap: 5px;
+}
+
+.timeframe-btn, .option-btn {
+  padding: 6px 12px;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none; /* 防止文本被选中 */
+  white-space: nowrap; /* 防止文本换行 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.timeframe-btn:hover, .option-btn:hover {
+  background-color: var(--border);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timeframe-btn.active, .option-btn.active {
+  background-color: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+  box-shadow: 0 2px 4px rgba(0, 102, 204, 0.2);
+}
+
+.chart-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden; /* 确保内容不溢出 */
+  touch-action: pan-x pan-y; /* 支持触摸设备的平移 */
+  padding-bottom: 5px; /* 为底部留出一些空间 */
+}
+
+/* 图表工具提示样式 */
+.tooltip-container {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  backdrop-filter: blur(4px);
+}
+
+.tooltip-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.tooltip-label {
+  color: var(--text-secondary);
+  margin-right: 10px;
+}
+
+.tooltip-value {
+  font-weight: 500;
+}
+
+.tooltip-value.up {
+  color: var(--success);
+}
+
+.tooltip-value.down {
+  color: var(--danger);
+}
+
+/* 加载状态样式 */
+.chart-loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--bg-primary-rgb, 255, 255, 255), 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  backdrop-filter: blur(2px); /* 模糊效果 */
+  transition: all 0.3s ease;
+}
+
+.chart-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(var(--accent-primary-rgb, 0, 102, 204), 0.2);
+  border-radius: 50%;
+  border-top-color: var(--accent-primary, #0066cc);
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 禁用状态的按钮样式 */
+.timeframe-btn:disabled, .option-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: var(--bg-tertiary);
+  border-color: var(--border);
+  color: var(--text-secondary);
+}
+
+/* 增强图表容器的触摸和鼠标交互 */
+.chart-container {
+  touch-action: pan-x pan-y;
+  cursor: grab;
+  transition: all 0.3s ease;
+}
+
+.chart-container:active {
+  cursor: grabbing;
+}
+
+/* 自定义图表价格刻度样式 */
+.price-scale-label {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background-color: var(--bg-primary);
+  padding: 2px 4px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* 增强十字线样式 */
+.lightweight-charts-crosshair-label {
+  background-color: var(--bg-secondary) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 4px !important;
+  padding: 4px 6px !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .chart-controls {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+  
+  .timeframe-selector {
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .chart-options {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+  }
+  
+  .timeframe-btn, .option-btn {
+    padding: 8px 12px; /* 在移动设备上增加按钮大小，便于触摸 */
+    font-size: 0.8rem;
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* 确保在移动设备上图表高度合适 */
+  .price-chart-container {
+    height: auto;
+    min-height: 300px;
+  }
+}
